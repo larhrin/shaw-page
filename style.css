@@ -114,6 +114,21 @@ p span {
   color: steelblue;
 }
 
+footer {
+  background-color: rgb(26, 25, 25);
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.footer-span {
+  margin-bottom: 6px;
+}
+
+.footer-span span {
+  margin-right: 6px;
+}
+
 @media only screen and (max-width: 800px) {
   .borad {
     display: none;
